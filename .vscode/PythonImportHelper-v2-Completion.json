@@ -1,0 +1,29 @@
+[
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "codeql_sarif_contain_error",
+        "kind": 2,
+        "importPath": ".github.workflows.fail_on_error",
+        "description": ".github.workflows.fail_on_error",
+        "peekOfCode": "def codeql_sarif_contain_error(filename):\n    with open(filename, 'r') as f:\n        s = json.load(f)\n    for run in s.get('runs', []):\n        rules_metadata = run['tool']['driver']['rules']\n        if not rules_metadata:\n            rules_metadata = run['tool']['extensions'][0]['rules']\n        for res in run.get('results', []):\n            if 'ruleIndex' in res:\n                rule_index = res['ruleIndex']",
+        "detail": ".github.workflows.fail_on_error",
+        "documentation": {}
+    }
+]
